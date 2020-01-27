@@ -10,7 +10,6 @@ versioning:
     - xcrun agvtool next-version -all
   artifacts:
     paths:
-      - ${ENV['PLIST_FILE']}
-      - "${ENV['PBXPROJ_FILE']}"
+      - "**/*.plist"
   tags:
     - ios

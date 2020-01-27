@@ -1,0 +1,19 @@
+versioning:
+  stage: versioning
+  only:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /go for it/
+    refs:
+      - master
+      - develop
+  script:
+    - cd ${CI_PROJECT_DIR}
+    - release next-version > .next-version
+    - xcrun agvtool new-marketing-version $(<.next-version)
+    - xcrun agvtool next-version -all
+  artifacts:
+    paths:
+      - ENV['PLIST_FILE']
+      - ENV['PBXPROJ_FILE']
+  tags:
+    - ios

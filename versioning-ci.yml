@@ -11,6 +11,5 @@ versioning:
   artifacts:
     paths:
       - "**/*.plist"
-      
   tags:
     - ios

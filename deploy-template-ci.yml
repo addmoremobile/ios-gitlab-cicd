@@ -1,5 +1,0 @@
-.deploy:
-  stage: deploy
-  when: manual
-  tags:
-    - ios

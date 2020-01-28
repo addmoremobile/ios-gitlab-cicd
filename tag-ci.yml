@@ -1,8 +1,0 @@
-tag:
-  stage: tag
-  script:
-    - release commit-and-tag **/*.plist *.xcodeproj/project.pbxproj
-  dependencies:
-    - versioning
-  tags:
-    - ios

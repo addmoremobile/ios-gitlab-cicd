@@ -1,0 +1,13 @@
+tag:
+  stage: tag
+  only:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /go for it/
+    refs:
+      - master
+  script:
+    - release commit-and-tag **/*.plist *.xcodeproj/project.pbxproj
+  dependencies:
+    - versioning
+  tags:
+    - ios

@@ -1,7 +1,7 @@
 versioning:
   stage: versioning
   variables:
-    SLACK_PAYLOAD: '{"text"\:"Project <$CI_PROJECT_URL/-/releases|$CI_PROJECT_PATH> bumped to version $(<.next-version)"}'
+    SLACK_PAYLOAD: '{"text":"Project <$CI_PROJECT_URL/-/releases|$CI_PROJECT_PATH> bumped to version $(<.next-version)"}'
   only:
     variables:
       - $CI_COMMIT_MESSAGE =~ /go for it/

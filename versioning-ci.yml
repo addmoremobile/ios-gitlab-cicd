@@ -6,12 +6,12 @@ versioning:
     variables:
       - $CI_COMMIT_MESSAGE =~ /go for it/
   script:
-    - echo $SLACK_MESSAGE
+    - echo $SLACK_PAYLOAD
     - cd ${CI_PROJECT_DIR}
     - release next-version > .next-version
     - xcrun agvtool new-marketing-version $(<.next-version)
     - xcrun agvtool next-version -all
-    - curl -X POST -H 'Content-Type:application/json' --data $SLACK_PAYLOAD $SLACK_WEBHOOK
+    - curl -X POST -H 'Content-Type:application/json' --data '$SLACK_PAYLOAD' $SLACK_WEBHOOK
   artifacts:
     paths:
       - "**/*.plist"

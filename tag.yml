@@ -7,6 +7,7 @@ tag:
       - master
   script:
     - release commit-and-tag **/*.plist *.xcodeproj/project.pbxproj
+    - curl -X POST -H 'Content-Type:application/json' --data "{\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\":warning:*Release Announcement*:warning:\nProject <$CI_PROJECT_URL/-/releases|$CI_PROJECT_PATH> bumped to version $(<.next-version)\"}}]}" $SLACK_WEBHOOK
   dependencies:
     - versioning
   tags:

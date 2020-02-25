@@ -13,5 +13,6 @@ versioning:
     paths:
       - "**/*.plist"
       - "*.xcodeproj/project.pbxproj"
+      - .next-version
   tags:
     - ios

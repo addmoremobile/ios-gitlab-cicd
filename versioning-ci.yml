@@ -3,8 +3,6 @@ versioning:
   only:
     variables:
       - $CI_COMMIT_MESSAGE =~ /go for it/
-    refs:
-      - master
   script:
     - cd ${CI_PROJECT_DIR}
     - release next-version > .next-version

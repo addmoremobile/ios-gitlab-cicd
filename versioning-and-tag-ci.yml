@@ -12,7 +12,7 @@ versioning:
     - xcrun agvtool next-version -all
   artifacts:
     paths:
-      - "**/*.plist"
+      - "**.plist"
       - "*.xcodeproj/project.pbxproj"
       - .next-version
   tags:

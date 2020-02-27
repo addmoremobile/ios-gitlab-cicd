@@ -26,7 +26,7 @@ tag:
     refs:
       - master
   script:
-    - release commit-and-tag **/*.plist *.xcodeproj/project.pbxproj
+    - release commit-and-tag $INFO_PLIST_PATH *.xcodeproj/project.pbxproj
     - curl -X POST -H "Content-Type:application/json" --data "{\"channel\":\"$SLACK_CHANNEL\",\"attachments\":[{\"mrkdwn_in\":[\"text\"],\"color\":\"#36a64f\",\"title\":\":warning:Release Announcement:warning:\",\"text\":\"Project <$CI_PROJECT_URL/-/releases|$CI_PROJECT_PATH> bumped to version $(<.next-version)\"}]}" $SLACK_WEBHOOK
   dependencies:
     - versioning
